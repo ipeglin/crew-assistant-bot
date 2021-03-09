@@ -1,6 +1,12 @@
 module.exports = {
     name: "prune",
+    aliases: ["purge", "delete", "nuke"],
+    cooldown: 5,
     description: "Display information about the server",
+    args: true,
+    usage: "<2-99>",
+    permissions: "KICK_MEMBERS",
+    guildOnly: true,
     execute(message, args) {
         const amount = parseInt(args[0]) + 1;
 

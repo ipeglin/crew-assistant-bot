@@ -1,6 +1,11 @@
 module.exports = {
     name: "warn",
+    cooldown: 5,
     description: "Display information about the server",
+    args: true,
+    usage: "<@user> [reason]",
+    permissions: "KICK_MEMBERS",
+    guildOnly: true,
     execute(message, args) {
         if (!message.mentions.users.size) return message.reply("You need to tag a user in order to warn them!");
         const taggedUser = message.mentions.users.first();
