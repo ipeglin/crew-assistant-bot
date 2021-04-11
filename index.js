@@ -7,6 +7,8 @@ client.commands = new Discord.Collection();
 const commandFolders = fs.readdirSync("./commands");
 const cooldowns = new Discord.Collection();
 
+const announcementChannel = "830865554382389348";
+
 for (const folder of commandFolders) {
     const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith(".js"));
     for (const file of commandFiles) {
@@ -20,6 +22,7 @@ dotenv.config();
 
 client.once("ready", () => {
     console.log("Ready!");
+    client.channels.cache.get(announcementChannel).send(`\`\`\`I am now up and running.\nYou can use the command '${prefix}help' to see what I can do.\n\nBoot Timestamp: ${new Date().toLocaleString().slice(0,-3)}\`\`\``);
 });
 
 
