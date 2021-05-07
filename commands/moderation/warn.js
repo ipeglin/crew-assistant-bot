@@ -22,6 +22,6 @@ module.exports = {
             message.channel.send("There was an error trying to prune messages in this channel!");
         });
         
-        message.channel.send(`<@${taggedUser.id}> have been warned for: *${warningTag}*`)
+        message.channel.send(`<@${taggedUser.id}> have been warned for: *${warningTag}*`);
     }
 }
