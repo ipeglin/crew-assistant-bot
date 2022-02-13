@@ -11,8 +11,6 @@ module.exports = {
 
         if (!message.mentions.users.size) return message.reply("You need to tag a user!");
         const taggedUser = message.mentions.users.first();
-        
-        console.log(`taggedUser: ${taggedUser}`)
 
         let Sent = 0;
         const spamInterval = setInterval(() => {
